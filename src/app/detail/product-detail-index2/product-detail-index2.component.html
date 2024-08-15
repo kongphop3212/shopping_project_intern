@@ -1,0 +1,48 @@
+<header class="header-outer">
+	<div class="header-inner responsive-wrapper">
+		<div class="header-logo">
+			<img src="assets\Logo.png" alt="Logo"/>
+		</div>
+	</div>
+</header>
+<div class="panel-group category-products" id="accordian">
+	<div class="panel panel-default">
+		<div class="panel-collapse collapse">
+			<div class="panel-body">
+				<ul>
+					<li><a [routerLink]="['/index2']"> Home </a></li>
+                    <li><a href="#"> New </a></li>
+                    <li><a href="#"> My Cart </a></li>
+					<li><a [routerLink]="['/account']"> My Account </a></li>
+                    <li><a [routerLink]="['/index']"> Log Out </a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="product">
+    <img [src]="product2.image" alt="Product Image" class="product-image">
+    <div class="product-info">
+        <h2 class="product-name">{{ product2.name }}</h2>
+        <h2 class="product-color">{{ product2.color }}</h2>
+        <p class="product-price">Price: ${{ product2.price }}</p>
+        <div class="size-options">
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
+            <button class="size-button">2XL</button>
+        </div>
+        <div class="product-add">
+            <div class="product-info">
+                <button class="decrease-quantity">-</button>
+                <span class="quantity">1</span>
+                <button class="increase-quantity">+</button>
+            </div>
+        </div>  
+        <div class="product-bottom">
+            <button class="buy-button">Buy Now</button>
+        </div>          
+    </div>
+</div>

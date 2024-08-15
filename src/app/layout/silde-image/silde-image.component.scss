@@ -1,0 +1,199 @@
+/** base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/** slider */
+.slider {
+    max-width: 100%;
+    max-height: 80%;
+    padding: 20px;
+
+    &:hover {
+        .slider__radiobox-label--prev,
+        .slider__radiobox-label--next {
+            opacity: 1;
+        }
+
+        .slider__radiobox-label--prev { left: 6%; }
+        .slider__radiobox-label--next { right: 6%; }
+    }
+
+    &--cover {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    &--fixed {
+        width: 100%;
+        height: 100%;
+    }
+
+    &--proportional {
+        width: 100%;
+        height: 0;
+    }
+}
+
+.slider__inner {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #ddd;
+
+    .slider--cover & {
+        width: 100%;
+        height: 100%;
+    }
+
+    margin-bottom: 0;
+
+    .slider--fixed & {
+        width: 100%;
+        height: 100%;
+    }
+
+    .slider--proportional & {
+        width: 100%;
+        height: 0;
+    }
+
+    .slider--proportional-4x3 & { padding-top: 75%; } /* 4:3 = 75% */
+    .slider--proportional-5x4 & { padding-top: 80%; } /* 5:4 = 80% */
+    .slider--proportional-16x9 & { padding-top: 56.25%; } /* 16:9 = 56.25% */
+}
+
+.slider__slides {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 400%; /* 100% * 4 */
+    height: 100%;
+    overflow-y: hidden;
+    transition: margin-left 0.4s;
+}
+
+.slider__slide {
+    display: block;
+    float: left;
+    position: relative;
+    width: 25%; /* 100% / 4 */
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.slider__radiobox-label {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+
+    &:focus {
+        background-color: red;
+    }
+
+    &--item {
+        bottom: 6%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 6px;
+        border: 6px solid transparent;
+        border-radius: 50%;
+        background: black;
+        background-clip: padding-box;
+        opacity: 0.3;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 0.5;
+        }
+
+        &-1 { margin-left: -36px; } /* 12px * -3 */
+        &-2 { margin-left: -12px; } /* 12px * -1 */
+        &-3 { margin-left: 12px; } /* 12px * 1 */
+        &-4 { margin-left: 36px; } /* 12px * 3 */
+    }
+
+    &--prev,
+    &--next {
+        display: none;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 0;
+        border: 12px solid black;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        opacity: 0;
+        transition: left 0.2s, right 0.2s, opacity 0.2s;
+    }
+
+    &--prev { left: -6%; border-left: 0; border-right-width: 24px; }
+    &--next { right: -6%; border-right: 0; border-left-width: 24px; }
+}
+
+.slider__radiobox {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+
+    &--1:checked ~ .slider__slides { margin-left: 0; }
+    &--2:checked ~ .slider__slides { margin-left: -100%; }
+    &--3:checked ~ .slider__slides { margin-left: -200%; }
+    &--4:checked ~ .slider__slides { margin-left: -300%; }
+
+    &--1:checked + .slider__radiobox-label--item-1,
+    &--2:checked + .slider__radiobox-label--item-2,
+    &--3:checked + .slider__radiobox-label--item-3,
+    &--4:checked + .slider__radiobox-label--item-4 {
+        opacity: 1;
+    }
+
+    &--1:checked ~ .slider__radiobox-label--prev-4,
+    &--2:checked ~ .slider__radiobox-label--prev-1,
+    &--3:checked ~ .slider__radiobox-label--prev-2,
+    &--4:checked ~ .slider__radiobox-label--prev-3,
+    &--1:checked ~ .slider__radiobox-label--next-2,
+    &--2:checked ~ .slider__radiobox-label--next-3,
+    &--3:checked ~ .slider__radiobox-label--next-4,
+    &--4:checked ~ .slider__radiobox-label--next-1 {
+        display: block;
+    }
+
+    &--1:focus:focus-visible + .slider__radiobox-label--item-1,
+    &--2:focus:focus-visible + .slider__radiobox-label--item-2,
+    &--3:focus:focus-visible + .slider__radiobox-label--item-3,
+    &--4:focus:focus-visible + .slider__radiobox-label--item-4 {
+        outline: 5px auto Highlight;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+}
+@media screen and (max-width: 768px) {
+    .slider {
+        padding: 10px; /* เปลี่ยนขนาดของ padding เมื่อหน้าจอมีความกว้างต่ำกว่าหรือเท่ากับ 768px */
+    }
+
+    .slider__slide {
+        width: 50%; /* เปลี่ยนขนาดของ slide เมื่อหน้าจอมีความกว้างต่ำกว่าหรือเท่ากับ 768px */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .slider {
+        padding: 5px; /* เปลี่ยนขนาดของ padding เมื่อหน้าจอมีความกว้างต่ำกว่าหรือเท่ากับ 576px */
+    }
+
+    .slider__slide {
+        width: 100%; /* เปลี่ยนขนาดของ slide เมื่อหน้าจอมีความกว้างต่ำกว่าหรือเท่ากับ 576px */
+    }
+}

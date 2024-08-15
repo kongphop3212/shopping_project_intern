@@ -1,0 +1,32 @@
+<div class="profile-container">
+  <div class="profile-section">
+      <h3 class="section-title">My Account</h3>
+      <div class="section-content">
+          <div class="info-item">
+              <h3 class="item-title">Personal Information</h3>
+              <a [routerLink]="['/edit-profile']" class="edit-button">Edit</a>
+          </div>
+          <div class="info-item">
+              <h2 class="item-title">Name</h2>
+              <p class="item-text">{{ name }}</p>
+          </div>
+          <div class="info-item">
+              <h2 class="item-title">Email Address</h2>
+              <p class="item-text email-address">{{ email }}</p>
+          </div>
+          <div class="info-item">
+            <h2 class="item-title">Password</h2>
+            <input type="password" class="item-text no-box" value="{{ password }}" disabled>
+          </div>
+          <div class="info-item">
+              <h3 class="section-title">Shipping Info</h3>
+              <a [routerLink]="['/edit-shipping']" class="edit-button">Edit</a>
+          </div>
+          <p class="shipping-info">Name: {{ nameship }}</p>
+          <p class="shipping-info">PhoneNumber: {{ tel }}</p>
+          <p class="shipping-info">Country: {{ country }}</p>
+          <p class="shipping-info">Address: {{ address }}</p>
+          <p class="shipping-info">City/Province/Postal code: {{ city }}, {{ province }}, {{ postalcode }}</p>
+      </div>
+  </div>
+</div>

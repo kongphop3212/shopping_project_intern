@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Common styles */
+.col-sm-3, .col-sm-4, .col-sm-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    font-family: 'IBM Plex Mono', monospace; /* Changed font-family */
+}
+
+.col-sm-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjustments for col-sm-9 */
+.col-sm-9 {
+    width: 75%;
+}
+
+/* Adjustments for col-sm-3 */
+.col-sm-3 {
+    width: 25%;
+}
+
+/* Features Items */
+.features_items {
+    margin-bottom: 20px;
+}
+
+.features_items .title {
+    margin-bottom: 30px;
+    font-family: 'IBM Plex Mono', monospace; /* Changed font-family */
+}
+
+.features_items .product-image-wrapper {
+    margin-bottom: 30px;
+    flex: 1;
+}
+
+.features_items .productinfo {
+    position: relative;
+}
+.productinfo img {
+    max-width: 250px; /* ปรับขนาดสูงสุดที่ต้องการ */
+    max-height: 250px; /* ปรับขนาดสูงสุดที่ต้องการ */
+}
+
+.features_items .productinfo h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'IBM Plex Mono', monospace; /* Changed font-family */
+}
+
+.features_items .product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000000;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.features_items .single-products:hover .product-overlay {
+    opacity: 1;
+}
+
+.features_items .overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+/* Category Tab */
+.category-tab {
+    margin-top: 30px;
+}
+
+.category-tab .nav-tabs {
+    border-bottom: none;
+}
+
+.category-tab .tab-content {
+    padding: 20px 0;
+}
+
+.category-tab .tab-content .col-sm-3 {
+    margin-bottom: 30px;
+}
+
+/* Recommended Items */
+.recommended_items {
+    margin-top: 30px;
+}
+
+.recommended_items .title {
+    margin-bottom: 20px;
+    font-family: 'IBM Plex Mono', monospace; /* Changed font-family */
+}
+
+.recommended_items .carousel-control {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.recommended_items .carousel-inner .item {
+    display: flex;
+}
+
+.recommended_items .carousel-inner .item .col-sm-4 {
+    margin-bottom: 30px;
+}
+
+.btn-default {
+    background-color: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.btn-default:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+
+@media (max-width: 768px) {
+    .col-sm-3, .col-sm-4, .col-sm-12 {
+        width: 100%;
+    }
+
+    .features_items .product-image-wrapper {
+        margin-bottom: 15px; /* ลดขนาดของ margin-bottom เพื่อให้แสดงผลเป็นหนึ่งแถว */
+    }
+
+    .productinfo img {
+        max-width: 100%; /* ให้รูปภาพขยายตามขนาดของ container */
+        max-height: auto; /* ให้รูปภาพมีส่วนสูงตามอัตราส่วน */
+    }
+
+    .features_items .productinfo h2 {
+        margin-top: 10px; /* ลดขนาดของ margin-top */
+        margin-bottom: 10px; /* ลดขนาดของ margin-bottom */
+    }
+
+    .features_items .overlay-content {
+        font-size: 14px; /* ลดขนาดของ font-size เพื่อให้พอดีกับขนาดหน้าจอเล็ก */
+    }
+}
+
+

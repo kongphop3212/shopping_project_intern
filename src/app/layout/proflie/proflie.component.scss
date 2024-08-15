@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.profile-container {
+    font-family: 'IBM Plex Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%; /* เพิ่มบรรทัดนี้ */
+}
+
+.profile-section {
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 95%;
+}
+
+.section-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.section-content {
+    font-family: 'IBM Plex Mono', monospace;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item {
+    font-family: 'IBM Plex Mono', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.item-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.item-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    color: #666;
+}
+
+.edit-button {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #000000; /* สีของตัวหนังสือเมื่อปกติ */
+    background-color: #dddddd; /* สีพื้นหลังเมื่อปกติ */
+    border: 1px solid #dddddd; /* เส้นขอบเมื่อปกติ */
+    font-size: 16px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* เพื่อทำให้มีการเปลี่ยนสีเมื่อ hover */
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #000000; /* สีพื้นหลังเมื่อ hover */
+    color: #ffffff; /* สีของตัวหนังสือเมื่อ hover */
+}
+
+.shipping-info {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    color: #666;
+}
+
+.no-box {
+    font-family: 'IBM Plex Mono', monospace;
+    border: none;
+    background-color: transparent;
+    width: auto;
+    max-width: 100%; /* กำหนดความกว้างสูงสุด */
+}
+/* เพิ่ม font-size สำหรับเหลืองร้านที่ขนาดจอเล็กกว่า 600px */
+@media only screen and (max-width: 600px) {
+    .section-title {
+        font-size: 20px;
+    }
+    .item-title {
+        font-size: 16px;
+    }
+    .item-text {
+        font-size: 14px;
+    }
+    /* เพิ่ม margin-bottom เพื่อปรับเว้นวรรคให้ดีขึ้น */
+    .section-title {
+        margin-bottom: 10px;
+    }
+    .item-title, .item-text {
+        margin-bottom: 5px;
+    }
+}
+
+/* เพิ่ม margin-bottom เมื่อขนาดของอุปกรณ์ใช้งานอยู่ในช่วง 601px ถึง 1200px */
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .section-title {
+        margin-bottom: 15px;
+    }
+    .item-title, .item-text {
+        margin-bottom: 10px;
+    }
+}
+
+/* เพิ่ม responsive design สำหรับอุปกรณ์ที่มีขนาดกว้างกว่า 1200px */
+@media only screen and (min-width: 1201px) {
+    .profile-container {
+        margin-top: 2%; /* ปรับ margin-top ให้ดูสมดุลกับขนาดหน้าจอใหญ่ขึ้น */
+    }
+    .profile-section {
+        width: 80%; /* ปรับขนาดกว้างของเนื้อหาให้ไม่สุกกับขนาดหน้าจอใหญ่ขึ้น */
+    }
+    .section-title {
+        font-size: 28px; /* ปรับขนาดตัวหนังสือให้ใหญ่ขึ้นบนหน้าจอใหญ่ */
+    }
+    .item-title {
+        font-size: 20px; /* ปรับขนาดตัวหนังสือให้ใหญ่ขึ้นบนหน้าจอใหญ่ */
+    }
+    .item-text {
+        font-size: 18px; /* ปรับขนาดตัวหนังสือให้ใหญ่ขึ้นบนหน้าจอใหญ่ */
+    }
+    .edit-button {
+        font-size: 18px; /* ปรับขนาดตัวหนังสือให้ใหญ่ขึ้นบนหน้าจอใหญ่ */
+        padding: 8px 15px; /* ปรับขนาดของปุ่มให้ใหญ่ขึ้นบนหน้าจอใหญ่ */
+    }
+}

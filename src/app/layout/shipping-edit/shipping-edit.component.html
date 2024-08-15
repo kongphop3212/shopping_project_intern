@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="header">
+        <h2>Shipping Info</h2>
+    </div>
+    <form>
+        <div class="form-group">
+            <label for="firstName">Name <span style="color:red;">*</span></label>
+            <input type="text" class="item-text" [(ngModel)]="nameship" name="name">
+        </div>
+        <div class="form-group">
+            <label for="firstName">PhoneNumber <span style="color:red;">*</span></label>
+            <input type="text" class="item-text" [(ngModel)]="tel" name="tel">
+        </div>
+        <div class="form-group">
+            <label for="country">Country <span style="color:red;">*</span></label>
+            <input type="text" id="country" [(ngModel)]="country" name="country">
+        </div>
+        <div class="form-group">
+            <label for="address">Address <span style="color:red;">*</span></label>
+            <input type="text" id="address" [(ngModel)]="address" name="address">
+        </div>
+        <div class="form-group">
+            <label for="city">City <span style="color:red;">*</span></label>
+            <input type="text" id="city" [(ngModel)]="city" name="city">
+        </div>
+    <div class="form-group">
+            <label for="state">Province <span style="color:red;">*</span></label>
+            <input type="text" id="state" [(ngModel)]="province" name="state">
+        </div>
+        <div class="form-group">
+            <label for="zip">Postal code <span style="color:red;">*</span></label>
+            <input type="text" id="zip" [(ngModel)]="postalcode" name="zip">
+        </div>
+        <div class="btn-group">
+            <button type="button" class="cancel-button" (click)="cancelChanges()">Cancel</button>
+            <button type="button" class="save-button" (click)="saveChanges()">Save</button>
+        </div>
+    </form>
+</div>

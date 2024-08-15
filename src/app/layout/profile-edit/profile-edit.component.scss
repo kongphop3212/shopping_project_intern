@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'IBM Plex Mono', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    font-family: 'IBM Plex Mono', monospace;
+    width: 500px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    margin: 10px auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.header {
+    font-family: 'IBM Plex Mono', monospace;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    font-family: 'IBM Plex Mono', monospace;
+    margin-bottom: 20px;
+}
+
+label {
+    font-family: 'IBM Plex Mono', monospace;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+select {
+    font-family: 'IBM Plex Mono', monospace;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-group {
+    font-family: 'IBM Plex Mono', monospace;
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #000000; /* สีของตัวหนังสือเมื่อปกติ */
+    background-color: #dddddd; /* สีพื้นหลังเมื่อปกติ */
+    border: 1px solid #dddddd; /* เส้นขอบเมื่อปกติ */
+    font-size: 16px;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* เพื่อทำให้มีการเปลี่ยนสีเมื่อ hover */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000000; /* สีพื้นหลังเมื่อ hover */
+    color: #ffffff; /* สีของตัวหนังสือเมื่อ hover */
+}
+@media (max-width: 600px) {
+    .container {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    input[type="text"],
+    select {
+      width: 100%;
+    }
+  }
+  

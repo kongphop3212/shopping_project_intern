@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.product-name,
+.product-color,
+.product-brand,
+.product-size,
+.size-options,
+.size-button,
+.product-price,
+.buy-button,
+.last-sale,
+.quantity,
+.sales-stat {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden; /* ป้องกันเนื้อหาที่ยาวเกินไป */
+}
+
+.product-image {
+    width: 450px; /* ลดขนาดรูปภาพเล็กลงเพื่อให้พื้นที่ใต้ข้อมูลเท่ากัน */
+    border-radius: 5px;
+    margin-left: 180px;
+    // margin-right: 20px;
+    object-fit: cover; /* ปรับให้รูปภาพมีการปรับขนาดให้สมดุล */
+}
+
+.product-info {
+    width: 100%; /* ทำให้ข้อมูลสินค้าเต็มความกว้าง */
+    width: 45%; /* ลดขนาดพื้นที่ข้อมูลสินค้าเล็กลงเพื่อให้พื้นที่ใต้ข้อมูลเท่ากัน */
+}
+
+.product-top {
+    margin-bottom: 20px;
+}
+
+.product-name {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+.product-color {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.product-brand {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.product-size {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #f00;
+}
+
+.product-add {
+    width: 100%; /* ทำให้ส่วนเพิ่มจำนวนสินค้าเต็มความกว้าง */
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.size-options {
+    margin-top: 10px;
+}
+
+.size-button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* เพิ่ม transition เพื่อทำให้มีการเปลี่ยนแปลงสีอย่างนุ่มนวล */
+}
+
+.size-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* เพิ่มสไตล์เมื่อไม่ชี้ */
+.size-button:not(:hover) {
+    background-color: rgb(199, 199, 199);
+    color: #000;
+}
+
+/* เพิ่มสไตล์เมื่อชี้ */
+.size-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+.product-bottom {
+    width: 100%;
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+    // display: flex;
+    // flex-direction: column;
+}
+
+.product-price {
+    padding-top: 12px;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.buy-button {
+    background-color: rgb(199, 199, 199); /* เปลี่ยนสีพื้นหลัง */
+    color: #000000; /* เปลี่ยนสีข้อความ */
+    margin-right: 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* ทำให้ปุ่มเต็มความกว้าง */
+    min-width: unset; /* ลบการกำหนด min-width */
+    margin-bottom: 10px; /* เพิ่มระยะห่างด้านล่าง */
+    // min-width: 120px; /* กำหนดความกว้างขั้นต่ำของปุ่ม */
+    max-width: 200px; /* กำหนดความกว้างสูงสุดของปุ่ม */
+    transition: background-color 0.3s ease, color 0.3s ease; /* เพิ่ม transition เพื่อทำให้มีการเปลี่ยนแปลงสีอย่างนุ่มนวล */
+}
+
+.buy-button:hover {
+    background-color: #000; /* เปลี่ยนสีพื้นหลังเมื่อเม้าส์ชี้ */
+    color: #fff; /* เปลี่ยนสีข้อความเมื่อเม้าส์ชี้ */
+}
+
+
+
+.product-sales {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.last-sale {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.sales-stats {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.sales-stat {
+    margin: 10px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+}
+/* สไตล์สำหรับปุ่มเพิ่มและลดจำนวนสินค้า */
+.increase-quantity,
+.decrease-quantity {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 50%; /* ทำให้เป็นรูปวงกลม */
+    width: 30px; /* กำหนดความกว้าง */
+    height: 30px; /* กำหนดความสูง */
+    font-size: 16px; /* กำหนดขนาดตัวอักษร */
+    cursor: pointer;
+    margin-right: 5px; /* ปรับระยะห่างระหว่างปุ่ม */
+    transition: background-color 0.3s ease, color 0.3s ease; /* เพิ่ม transition เพื่อทำให้มีการเปลี่ยนแปลงสีอย่างนุ่มนวล */
+}
+
+/* เพิ่มเอฟเฟค hover */
+.increase-quantity:hover,
+.decrease-quantity:hover {
+    background-color: #000; /* เปลี่ยนสีพื้นหลังเมื่อเม้าส์ชี้ */
+    color: #fff; /* เปลี่ยนสีตัวอักษรเมื่อเม้าส์ชี้ */
+}
+
+/* เพิ่มเอฟเฟคเมื่อไม่ชี้ */
+.increase-quantity:not(:hover),
+.decrease-quantity:not(:hover) {
+    background-color: #fff; /* เปลี่ยนสีพื้นหลังเมื่อไม่เลื่อนเม้าส์ */
+    color: #000; /* เปลี่ยนสีตัวอักษรเมื่อไม่เลื่อนเม้าส์ */
+}
+
+
+/* สไตล์สำหรับปุ่มลดจำนวนสินค้า */
+.decrease-quantity {
+    margin-right: 5px; /* ปรับระยะห่างของปุ่มลดจำนวนสินค้า */
+}
+
+.increase-quantity{
+    margin-left: 5px;
+}
+
+/* สไตล์สำหรับจำนวนสินค้า */
+.quantity {
+    margin-right: 5px;
+    margin: 0; /* ลบ margin ที่เพิ่มเข้ามา */
+    // font-size: 16px; /* กำหนดขนาดตัวอักษร */
+    // line-height: 30px; /* จัดวางตัวเลขให้อยู่ตรงกลางกับปุ่ม */
+    // margin-right: 5px; /* ปรับระยะห่างระหว่างจำนวนสินค้ากับปุ่ม */
+}
+/////
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+:root {
+    --header-outer-height: 110px;
+    --header-inner-height: 70px;
+    --header-height-difference: calc(
+        var(--header-outer-height) - var(--header-inner-height)
+    );
+    --header-bg: #fff;
+}
+
+body {
+    font-family: 'IBM Plex Mono', monospace; /* ตรงนี้เปลี่ยนเป็น IBM Plex Mono */
+    background-color: #f2f5f7;
+    line-height: 1.5;
+    min-height: 300vh;
+    position: relative;
+}
+
+.responsive-wrapper {
+    width: 90%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-logo {
+    text-align: center;
+}
+
+.header-logo img {
+    max-height: 100px;
+}
+
+.header-outer {
+    height: var(--header-outer-height);
+    position: sticky;
+    top: calc(
+        var(--header-height-difference) * -1
+    );
+    display: flex;
+    align-items: center;
+    background-color: var(--header-bg); 
+    box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.1);
+}
+
+@media (min-width: 800px) {
+    .header-navigation a {
+        display: inline-block;
+    }
+
+    .header-navigation button {
+        display: none;
+    }
+}
+.panel-group {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.panel-default {
+    border-color: #ddd;
+}
+
+.panel-heading {
+    border-color: #ddd;
+    background-color: #f5f5f5;
+}
+
+.panel-title a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace; /* ตรงนี้เปลี่ยนเป็น IBM Plex Mono */
+}
+
+.panel-body ul {
+    list-style-type: none;
+    font-family: 'IBM Plex Mono', monospace; /* ตรงนี้เปลี่ยนเป็น IBM Plex Mono */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.panel-body ul li a {
+    display: block;
+    padding: 20px 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.panel-body ul li a:hover {
+    background-color: #f5f5f5;
+}
+@media (max-width: 768px) {
+    .product-image {
+        width: 100%; /* ปรับขนาดรูปภาพให้เต็มความกว้างของพอร์ตรุ่นเคลื่อนที่ */
+        margin-left: 0; /* ลบการกำหนด margin-left */
+    }
+
+    .product-info {
+        width: 100%; /* ทำให้ข้อมูลสินค้าเต็มความกว้าง */
+    }
+
+    .size-options {
+        justify-content: center; /* จัดให้ปุ่มขนาดตรงกลาง */
+    }
+
+    .size-button {
+        margin-right: 5px; /* ปรับระยะห่างระหว่างปุ่มขนาด */
+    }
+
+    .product-add {
+        margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+    }
+
+    .product-price,
+    .buy-button {
+        width: 100%; /* ทำให้ปุ่มเต็มความกว้าง */
+    }
+}

@@ -1,0 +1,24 @@
+<header class="header-outer">
+	<div class="header-inner responsive-wrapper">
+		<div class="header-logo">
+			<img src="assets\Logo.png" alt="Logo"/>
+		</div>
+	</div>
+</header>
+<div class="panel-group category-products" id="accordian">
+	<div class="panel panel-default">
+		<div class="panel-collapse collapse">
+			<div class="panel-body">
+				<ul>
+					<li><a [routerLink]="['/index2']"> Home </a></li>
+                    <li><a href="#"> New </a></li>
+                    <li><a href="#"> My Cart </a></li>
+					<li><a [routerLink]="['/account']"> My Account </a></li>
+                    <li><a [routerLink]="['/index']"> Log Out </a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<app-proflie-menu></app-proflie-menu>
+<app-shipping-edit></app-shipping-edit>
